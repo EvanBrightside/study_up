@@ -29,7 +29,7 @@ Dependency installation application preparation
 - http://localhost:3000/admin
 
 ```bash
-bundle exec foreman start
+bundle exec foreman start -f Procfile.dev
 ```
 
 ##### 5. Rspec

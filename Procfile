@@ -1,2 +1,1 @@
-web: bundle exec rails s -p 3000
-webpack: ./bin/webpack-dev-server
+web: bin/rails server -p $PORT -e $RAILS_ENV
