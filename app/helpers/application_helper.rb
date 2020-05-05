@@ -1,6 +1,6 @@
 module ApplicationHelper
   def students_list(students)
-    return 'Студентов нет' if students.empty?
+    return t('default.no_students') if students.empty?
 
     students
       .map { |el| ["#{el.name}(#{el.email})"] }

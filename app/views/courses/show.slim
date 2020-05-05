@@ -4,8 +4,8 @@ h1.col-sm-12.text-center
   table.table.table-striped
     thead.thead-dark
       tr.row
-        th.col-4= 'Название группы'
-        th.col-8= 'Список студентов'
+        th.col-4= t('activerecord.models.course.group_table_main_table')
+        th.col-8= t('activerecord.models.course.group_table_students_count')
     tbody.fixed-table-body
       - @groups.each do |group|
         tr.row
@@ -13,10 +13,10 @@ h1.col-sm-12.text-center
           td.col-8= students_list(group.students)
 
   .row
-    div.col-10= link_to 'Назад', root_path, class: 'btn btn-warning'
+    div.col-10= link_to t('activerecord.models.course.back_button'), root_path, class: 'btn btn-warning'
     br
     - unless @course.student_groups.empty?
-      div= link_to 'Записаться на курс', new_student_path,
+      div= link_to t('activerecord.models.course.new_title'), new_student_path,
                 class: 'btn btn-success',
                 data: { modal: true, modal_params: {course: @course} }
 

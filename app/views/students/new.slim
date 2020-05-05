@@ -1,6 +1,6 @@
 .modal-header
   h5.modal-title
-    = "Записаться на курс #{@course&.name}"
+    = "#{t('activerecord.models.course.new_title')} #{@course&.name}"
   button.close[type="button" data-dismiss="modal" aria-label="Close"]
     span[aria-hidden="true"]
       | ×

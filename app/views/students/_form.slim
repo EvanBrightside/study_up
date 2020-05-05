@@ -4,4 +4,4 @@
     = f.input :email
     = f.input :course_id, as: :hidden, input_html: { value: @course.id }
   .modal-footer
-    = f.button :submit, 'Записаться', class: 'btn-success'
+    = f.button :submit, t('activerecord.models.student.form_submit'), class: 'btn-success'

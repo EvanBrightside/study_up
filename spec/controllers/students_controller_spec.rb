@@ -20,8 +20,8 @@ RSpec.describe StudentsController, type: :controller do
     let!(:course_1) { create :course }
     let!(:course_2) { create :course }
     let!(:student_group) { create :student_group, course_id: course_1.id }
-    let!(:params_1) { { student: { name: Faker::Name.name, email: Faker::Internet.safe_email, course_id: course_1.id } } }
-    let!(:params_2) { { student: { name: Faker::Name.name, email: Faker::Internet.safe_email, course_id: course_2.id } } }
+    let!(:params_1) { { student: { name: Faker::Name.name, email: 'hello@ivanzabrodin.com', course_id: course_1.id } } }
+    let!(:params_2) { { student: { name: Faker::Name.name, email: 'itsme@ivanzabrodin.com', course_id: course_2.id } } }
 
     it "returns a successful response" do
       post :create, params: params_1

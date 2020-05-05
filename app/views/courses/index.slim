@@ -1,13 +1,13 @@
 h1.col-sm-12.text-center
-  = 'Study UP'
+  = t('default.title')
 
 .container
   table.table.table-striped
     thead
       tr.row
-        th.col-4= 'Название курса'
-        th.col-4= sortable 'start_date', 'Дата старта'
-        th.col-4= 'Количество студентов'
+        th.col-4= t('activerecord.models.course.main_table_name')
+        th.col-4= sortable 'start_date', t('activerecord.models.course.main_table_start_date')
+        th.col-4= t('activerecord.models.course.main_table_students_count')
     tbody
       - @courses.each do |course|
         tr.row
@@ -15,4 +15,4 @@ h1.col-sm-12.text-center
           td.col-4= course.start_date
           td.col-4= course.students_count
 
-  = link_to 'Админка', admin_root_path, class: 'btn btn-warning'
+  = link_to t('default.admin_panel'), admin_root_path, class: 'btn btn-warning'

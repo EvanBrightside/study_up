@@ -22,7 +22,6 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.strategy = :transaction
   end
-
   config.include WebmockHelper
   config.include FactoryBot::Syntax::Methods
   config.use_transactional_fixtures = true

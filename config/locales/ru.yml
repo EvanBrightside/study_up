@@ -5,6 +5,10 @@ ru:
   date:
    formats:
      long: "%d-%m-%Y"
+  default:
+    title: Study UP
+    admin_panel: Админка
+    no_students: Студентов нет
   activerecord:
     models:
       course:
@@ -12,12 +16,20 @@ ru:
         few: Курса
         many: Курсов
         other: Курсы
+        new_title: Записаться на курс
+        main_table_name: Название курса
+        main_table_start_date: Дата старта
+        main_table_students_count: Количество студентов
+        back_button: Назад
+        group_table_main_table: Название группы
+        group_table_students_count: Список студентов
       student_group:
         one: Группа
         other: Группы
       student:
         one: Студент
         other: Студенты
+        form_submit: Записаться
       admin_user:
         one: Администратор
         other: Администраторы
