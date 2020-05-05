@@ -1,0 +1,18 @@
+h1.col-sm-12.text-center
+  = 'Study UP'
+
+.container
+  table.table.table-striped
+    thead
+      tr.row
+        th.col-4= 'Название курса'
+        th.col-4= sortable 'start_date', 'Дата старта'
+        th.col-4= 'Количество студентов'
+    tbody
+      - @courses.each do |course|
+        tr.row
+          th.col-4= link_to course.name, course_path(course)
+          td.col-4= course.start_date
+          td.col-4= course.students_count
+
+  = link_to 'Админка', admin_root_path, class: 'btn btn-warning'

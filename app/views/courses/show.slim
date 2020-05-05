@@ -1,0 +1,23 @@
+h1.col-sm-12.text-center
+  = @course&.name
+.container
+  table.table.table-striped
+    thead.thead-dark
+      tr.row
+        th.col-4= 'Название группы'
+        th.col-8= 'Список студентов'
+    tbody.fixed-table-body
+      - @groups.each do |group|
+        tr.row
+          th.col-4= group.name
+          td.col-8= students_list(group.students)
+
+  .row
+    div.col-10= link_to 'Назад', root_path, class: 'btn btn-warning'
+    br
+    - unless @course.student_groups.empty?
+      div= link_to 'Записаться на курс', new_student_path,
+                class: 'btn btn-success',
+                data: { modal: true, modal_params: {course: @course} }
+
+  #modal-holder

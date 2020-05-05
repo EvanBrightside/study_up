@@ -1,0 +1,7 @@
+= simple_form_for student, remote: request.xhr?, html: { data: { modal: true } } do |f|
+  .modal-body
+    = f.input :name
+    = f.input :email
+    = f.input :course_id, as: :hidden, input_html: { value: @course.id }
+  .modal-footer
+    = f.button :submit, 'Записаться', class: 'btn-success'
