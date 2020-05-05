@@ -34,7 +34,6 @@ gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'faker'
   gem 'database_cleaner'
   gem 'pry-rails'
   gem 'rspec-rails'
@@ -61,3 +60,4 @@ end
 gem 'slim-rails'
 gem 'simple_form'
 gem 'responders'
+gem 'faker'
