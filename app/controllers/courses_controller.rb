@@ -8,8 +8,6 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @groups = @course.student_groups
-
-    head :not_found unless @course
   end
 
   private

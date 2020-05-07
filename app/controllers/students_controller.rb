@@ -16,12 +16,10 @@ class StudentsController < ApplicationController
     full_params = student_params.merge(student_group_id: student_group_id)
 
     @student = Student.new(full_params)
-    if @student.save!
+    if @student.save
       respond_modal_with @student, location: course_path(course.id)
-      head :created
     else
-      render :new
-      head :unprocessable_entity
+      render :new, head: :unprocessable_entity
     end
   end
 
@@ -33,7 +31,7 @@ class StudentsController < ApplicationController
 
   def find_group(course)
     course_groups = course.student_groups
-    group = course_groups.select{ |el| el.students.size < 8 }.first
+    group = course_groups.select{ |el| el.students.size < StudentGroup::STUDENTS_LIMIT }.first
 
     group&.id
   end
