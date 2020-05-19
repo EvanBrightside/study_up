@@ -39,3 +39,26 @@ Running tests
 ```bash
 bundle exec rspec
 ```
+
+# Setup with Docker
+
+##### 1. Build image
+
+```bash
+docker-compose build
+```
+
+##### 2. Run image
+```bash
+docker-compose run --rm runner
+```
+
+##### 3. Run Rails server
+```bash
+dip rails s
+```
+
+##### 4. Run Rails console (as an option)
+```bash
+dip rails c
+```
