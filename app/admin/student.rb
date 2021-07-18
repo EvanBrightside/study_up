@@ -12,6 +12,12 @@ ActiveAdmin.register Student do
     actions
   end
 
+  controller do
+    def scoped_collection
+      Student.includes(:student_group)
+    end
+  end
+
   filter :name
   filter :email
   filter :created_at

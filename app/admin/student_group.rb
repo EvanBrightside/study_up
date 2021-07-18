@@ -1,7 +1,7 @@
 ActiveAdmin.register StudentGroup do
   menu priority: 2
   permit_params :name, :course_id,
-                student: [:id, :name, :email, :_destroy]
+                student: %i[id name email _destroy]
 
   index do
     selectable_column
@@ -10,6 +10,12 @@ ActiveAdmin.register StudentGroup do
     column :course
     column :created_at
     actions
+  end
+
+  controller do
+    def scoped_collection
+      StudentGroup.includes(:course)
+    end
   end
 
   filter :name

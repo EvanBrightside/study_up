@@ -2,12 +2,12 @@ class CoursesController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @courses = Course.order(sort_column + ' ' + sort_direction)
+    @courses = Course.includes(:student_groups).order("#{sort_column} #{sort_direction}")
   end
 
   def show
     @course = Course.find(params[:id])
-    @groups = @course.student_groups
+    @groups = @course.student_groups.includes([:students])
   end
 
   private
