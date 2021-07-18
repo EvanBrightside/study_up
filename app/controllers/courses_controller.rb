@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @groups = @course.student_groups.includes([:students])
+    @groups = @course.student_groups.includes(:students)
   end
 
   private
